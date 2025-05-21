@@ -1,0 +1,169 @@
+{
+  "info": {
+    "name": "FileConverterApp Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Convert Document",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "file", "type": "file", "src": "{{fileRoot}}\\sample.pdf" },
+            { "key": "inputFormat", "value": "Pdf", "type": "text" },
+            { "key": "outputFormat", "value": "Html", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/documents/convert",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api","documents","convert"]
+        }
+      }
+    },
+    {
+      "name": "Convert Image",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "file", "type": "file", "src": "{{fileRoot}}\\sample.jpg" },
+            { "key": "inputFormat", "value": "Jpg", "type": "text" },
+            { "key": "outputFormat", "value": "Png", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/images/convert",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api","images","convert"]
+        }
+      }
+    },
+    {
+      "name": "Convert Video",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "file", "type": "file", "src": "{{fileRoot}}\\sample.mp4" },
+            { "key": "inputFormat", "value": "Mp4", "type": "text" },
+            { "key": "outputFormat", "value": "Mkv", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/videos/convert",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api","videos","convert"]
+        }
+      }
+    },
+    {
+      "name": "Convert Audio",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "file", "type": "file", "src": "{{fileRoot}}\\sample.mp3" },
+            { "key": "inputFormat", "value": "Mp3", "type": "text" },
+            { "key": "outputFormat", "value": "Wav", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/audio/convert",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api","audio","convert"]
+        }
+      }
+    },
+    {
+      "name": "Get Document Sample",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/samples/document?format=Pdf",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api","samples","document"],
+          "query": [
+            { "key": "format", "value": "Pdf" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Image Sample (random)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/samples/image?width=800&height=600&format=Png",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api","samples","image"],
+          "query": [
+            { "key": "width", "value": "800" },
+            { "key": "height", "value": "600" },
+            { "key": "format", "value": "Png" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Video Sample",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/samples/video?format=Mp4&duration=5&resolution=320x240",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api","samples","video"],
+          "query": [
+            { "key": "format", "value": "Mp4" },
+            { "key": "duration", "value": "5" },
+            { "key": "resolution", "value": "320x240" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Audio Sample",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/samples/audio?format=Wav&duration=5",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api","samples","audio"],
+          "query": [
+            { "key": "format", "value": "Wav" },
+            { "key": "duration", "value": "5" }
+          ]
+        }
+      }
+    }
+  ]
+}
